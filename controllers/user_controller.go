@@ -15,7 +15,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-var userCollection *mongo.Collection = configs.getCollection(configs.DB, "users")
+var userCollection *mongo.Collection = configs.GetCollection(configs.DB, "users")
 var validate = validator.New()
 
 

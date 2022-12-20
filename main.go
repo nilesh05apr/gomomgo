@@ -9,7 +9,7 @@ import (
 func main() {
     app := fiber.New()
 
-    configs.connectDB()
+    configs.ConnectDB()
 
     routes.UserRoute(app)
 

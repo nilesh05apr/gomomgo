@@ -10,7 +10,7 @@ import (
 )
 
 
-func connectDB() *mongo.Client  {
+func ConnectDB() *mongo.Client  {
     client, err := mongo.NewClient(options.Client().ApplyURI(EnvMongoURI()))
     if err != nil {
         log.Fatal(err)
@@ -30,9 +30,9 @@ func connectDB() *mongo.Client  {
     return client
 }
 
-var DB *mongo.Client = connectDB()
+var DB *mongo.Client = ConnectDB()
 
-func getCollection(client *mongo.Client, collectionName string) *mongo.Collection {
+func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
 	collection := client.Database("golangAPI").Collection(collectionName)
 	return collection
 }
